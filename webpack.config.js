@@ -8,7 +8,7 @@ module.exports = {
   },
   entry: {
     index: ['@babel/polyfill', path.resolve(__dirname, './src/index.ts')],
-    'main2.js': 'src/main2.ts'
+    'main2.js': 'src/main2.ts',
   },
   module: {
     rules: [
