@@ -4,10 +4,11 @@ const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 module.exports = {
   output: {
     path: `${__dirname}/dist`,
-    filename: 'bundle.js',
+    filename: '[name].js',
   },
   entry: {
-    main: ['@babel/polyfill', path.resolve(__dirname, './src/index.ts')],
+    index: ['@babel/polyfill', path.resolve(__dirname, './src/index.ts')],
+    'main2.js': 'src/main2.ts'
   },
   module: {
     rules: [
