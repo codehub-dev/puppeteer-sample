@@ -9,7 +9,6 @@ export const xElement = async (page: puppeteer.Page, xPath: string) => {
 export const xClick = async (page: puppeteer.Page, xPath: string) => {
   const element = await xElement(page, xPath);
   await element.click();
-  await page.waitForNavigation();
 };
 
 export const xType = async (
@@ -19,5 +18,4 @@ export const xType = async (
 ) => {
   const element = await xElement(page, xPath);
   await element.type(typeString);
-  await page.waitForNavigation();
 };
