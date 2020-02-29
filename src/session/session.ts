@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 // import sleep from '@/puppeteer/sleep';
-import { permissionsList } from '@/puppeteer/permissions';
+// import { permissionsList } from '@/puppeteer/permissionsList';
 
 const sample1 = async () => {
   const browser = await puppeteer.launch({
@@ -11,19 +11,19 @@ const sample1 = async () => {
   });
   (async () => {
     const page = await browser.newPage();
-    await page.goto('https://map.ultra-zone.net/g/', { waitUntil: 'load' });
-
     const context = browser.defaultBrowserContext();
-    await context.overridePermissions('https://www.google.com/', [
-      permissionsList.geolocation,
-    ]);
 
+    await context.overridePermissions('https://map.ultra-zone.net/', [
+      'geolocation',
+    ]);
     const client = await page.target().createCDPSession();
+
     await client.send('Emulation.setGeolocationOverride', {
       latitude: 35.681236,
       longitude: 139.767125,
       accuracy: 100,
     });
+    await page.goto('https://map.ultra-zone.net/g/', { waitUntil: 'load' });
 
     const result = await page.evaluate(() => {
       return new Promise(resolve => {
