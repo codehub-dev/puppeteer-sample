@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 // import sleep from '@/puppeteer/sleep';
-import { permissionsList } from '@/puppeteer/permissions';
+import { permissionsList } from '@/puppeteer/permissionsList';
 
 const sample1 = async () => {
   const browser = await puppeteer.launch({
