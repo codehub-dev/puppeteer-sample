@@ -4,8 +4,10 @@ import devices from 'puppeteer/DeviceDescriptors';
 export enum DeviceType {
   PC_2K = '2K',
   PC_4K = '4K',
-  SP = 'iPhone X',
-  TABLET = 'iPad Pro',
+  IPadPro = 'iPad Pro',
+  IPhone5 = 'iphone 5',
+  IPhone8 = 'iphone 8',
+  IPhoneX = 'iPhone X',
 }
 
 export const deviceSelector = async (
