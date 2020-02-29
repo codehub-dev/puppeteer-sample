@@ -1,6 +1,3 @@
-// @ts-ignore
-const main = () => {
-  console.log('aaa');
-};
+import sample1 from '@/sample1';
 
-main();
+sample1();

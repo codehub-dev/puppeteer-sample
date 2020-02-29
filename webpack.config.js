@@ -1,5 +1,6 @@
 const path = require('path');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   output: {
@@ -8,8 +9,10 @@ module.exports = {
   },
   entry: {
     index: ['@babel/polyfill', path.resolve(__dirname, './src/index.ts')],
-    'main2.js': 'src/main2.ts',
+    // index: path.resolve(__dirname, './src/index.ts'),
+    // 'main2.js': 'src/main2.ts',
   },
+  target: 'node',
   module: {
     rules: [
       {
@@ -32,7 +35,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],
+    modules: ['node_modules'],
     plugins: [],
   },
+  externals: [nodeExternals()],
   plugins: [new HardSourceWebpackPlugin()],
 };
