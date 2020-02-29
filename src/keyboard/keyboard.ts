@@ -1,5 +1,6 @@
 import puppeteer from 'puppeteer';
 // import sleep from '@/puppeteer/sleep';
+import { permissionsList } from '@/puppeteer/permissions';
 
 const sample1 = async () => {
   const browser = await puppeteer.launch({
@@ -14,7 +15,7 @@ const sample1 = async () => {
 
     const context = browser.defaultBrowserContext();
     await context.overridePermissions('https://www.google.com/', [
-      'geolocation',
+      permissionsList.geolocation,
     ]);
 
     await page.focus('input[name="q"]');
