@@ -2,7 +2,6 @@ import puppeteer from 'puppeteer';
 import { xType } from '@/puppeteer/xPath';
 
 const sample1 = async () => {
-  const url = 'https://www.google.com/';
   const browser = await puppeteer.launch({
     headless: false,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
@@ -10,7 +9,7 @@ const sample1 = async () => {
     slowMo: 200,
   });
   const page = await browser.newPage();
-  await page.goto(url, { waitUntil: 'load' });
+  await page.goto('https://www.google.com/', { waitUntil: 'load' });
 
   await xType(
     page,

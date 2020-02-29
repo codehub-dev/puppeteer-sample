@@ -1,0 +1,18 @@
+export enum permissionsList {
+  'geolocation',
+  'midi',
+  'midi-sysex',
+  'notifications',
+  'push',
+  'camera',
+  'microphone',
+  'background-sync',
+  'ambient-light-sensor',
+  'accelerometer',
+  'gyroscope',
+  'magnetometer',
+  'accessibility-events',
+  'clipboard-read',
+  'clipboard-write',
+  'payment-handler',
+}
