@@ -18,6 +18,15 @@ const sample1 = async () => {
         console.log(`${i}: ${msg.args()[i]}`);
     });
     await page.evaluate(() => console.log('hello', 5, { foo: 'bar' }));
+
+    // JavaScriptを有効にするか
+    await page.setJavaScriptEnabled(true);
+    // オフラインモード
+    await page.setOfflineMode(false);
+
+    // リロード
+    await page.reload();
+
   })().finally(async () => {
     await browser.close();
   });
