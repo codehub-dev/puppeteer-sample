@@ -355,3 +355,6 @@ MigrationBackup/
 .idea/
 build/
 dist/
+*.jpg
+*.png
+*.pdf

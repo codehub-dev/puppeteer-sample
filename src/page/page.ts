@@ -26,7 +26,6 @@ const sample1 = async () => {
 
     // リロード
     await page.reload();
-
   })().finally(async () => {
     await browser.close();
   });
